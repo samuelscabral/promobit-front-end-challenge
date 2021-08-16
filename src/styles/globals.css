@@ -14,5 +14,5 @@ body {
   text-rendering        : optimizelegibility;
   word-break            : normal;
   -webkit-font-smoothing: antialiased;
-  overflow-x            : hidden;
+
 }

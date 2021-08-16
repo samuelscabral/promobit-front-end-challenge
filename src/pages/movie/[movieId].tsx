@@ -6,13 +6,20 @@ import {
 import { getAllMovies, getMovie } from "utils/apiWrapper";
 import { MovieDetailed } from "utils/apiWrapper/apiTypes";
 import { ParsedUrlQuery } from "querystring";
+import React from "react";
+import Header from "components/Header";
 
 interface MovieProps {
   movie: MovieDetailed;
 }
 
 export default function Movies({ movie }: MovieProps) {
-  return <div key={movie.id}> {movie.title}</div>;
+  return (
+    <>
+      <Header />
+      <div key={movie.id}> {movie.title}</div>
+    </>
+  );
 }
 
 interface PageParams extends ParsedUrlQuery {

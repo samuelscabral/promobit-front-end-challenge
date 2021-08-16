@@ -1,0 +1,10 @@
+.header {
+    display        : flex;
+    width          : 100%;
+    flex-direction : row;
+    position       : sticky;
+    top            : 0px;
+    z-index        : 30;
+    justify-content: space-between;
+    background     : white;
+}

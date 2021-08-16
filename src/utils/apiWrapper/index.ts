@@ -1,36 +1,19 @@
-import { Genre as MovieGenre, MovieDetailed, MovieList } from "./apiTypes";
+import fillParams, { Query } from "utils/UrlParamsParse";
+import { Genre as MovieGenre, MovieDetailed, MovieResult } from "./apiTypes";
 
 const apiKey = process.env.REACT_APP_TMDB_API_KEY_V3 ?? "";
 const language = "pt-BR";
 const baseUrl = "https://api.themoviedb.org/3";
-
-type Query = string | string[] | undefined;
-
-function fillParams(params: { [key: string]: Query }) {
-  const parsedParams = {} as { [key: string]: string };
-  for (const [key, value] of Object.entries(params)) {
-    if (!value) continue;
-    if (typeof value === "string") parsedParams[key] = value;
-    else parsedParams[key] = value?.join("%2C");
-  }
-  return new URLSearchParams(parsedParams);
-}
 
 export async function getAllMovies(page?: Query) {
   const params = fillParams({ api_key: apiKey, page, language });
 
   const response = await fetch(`${baseUrl}/movie/popular?` + params.toString());
 
-  return ((await response.json()) as MovieList) ?? [];
+  return ((await response.json()) as MovieResult) ?? [];
 }
 
-export async function getFilteredMovies({
-  page,
-  genreCodes,
-}: {
-  page?: string;
-  genreCodes?: string[];
-}) {
+export async function getFilteredMovies(page: Query, genreCodes: Query) {
   const params = fillParams({
     api_key: apiKey,
     sort_by: "popularity.desc",
@@ -45,7 +28,7 @@ export async function getFilteredMovies({
     `${baseUrl}/discover/movie?${params.toString()}`
   );
 
-  return ((await response.json()) as MovieList) ?? [];
+  return ((await response.json()) as MovieResult) ?? [];
 }
 
 export async function getMovie(movieId: string) {
@@ -58,8 +41,11 @@ export async function getMovie(movieId: string) {
 
 export async function getGenres() {
   const params = fillParams({ api_key: apiKey, language });
+  console.log(`${baseUrl}/genre/movie/list?${params.toString()}`);
+
   const response = await fetch(
     `${baseUrl}/genre/movie/list?${params.toString()}`
   );
-  return (await response.json()) as MovieGenre[];
+
+  return (await response.json()).genres as MovieGenre[];
 }
