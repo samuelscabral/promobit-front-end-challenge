@@ -1,7 +1,5 @@
-import { useRouter } from "next/router";
 import React, { createContext, useState, useEffect } from "react";
 import { Genre } from "utils/apiWrapper/apiTypes";
-import UrlParamsParse from "utils/UrlParamsParse";
 
 interface GenreContextType {
   genres: Genre[];

@@ -8,6 +8,7 @@ import { MovieDetailed } from "utils/apiWrapper/apiTypes";
 import { ParsedUrlQuery } from "querystring";
 import React from "react";
 import Header from "components/Header";
+import classes from "./styles.module.scss";
 
 interface MovieProps {
   movie: MovieDetailed;
@@ -17,7 +18,9 @@ export default function Movies({ movie }: MovieProps) {
   return (
     <>
       <Header />
-      <div key={movie.id}> {movie.title}</div>
+      <main className={classes.container}>
+        <div key={movie.id}> {movie.title}</div>
+      </main>
     </>
   );
 }

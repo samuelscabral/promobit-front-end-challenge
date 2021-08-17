@@ -1,4 +1,4 @@
-.content {
+.contentContainer {
     display               : -webkit-box;
     display               : -webkit-flex;
     display               : -ms-flexbox;
@@ -10,6 +10,7 @@
     -ms-flex-direction    : row;
     flex-direction        : row;
 
+
     @media screen and (min-width: 48rem) {
         -webkit-flex-direction: column;
         -ms-flex-direction    : column;
@@ -17,7 +18,19 @@
     }
 }
 
-.image {
+.imageContainer {
+    @media screen and (min-width: 48rem) {
+        padding-bottom: 0;
+        padding-top   : 0;
+        margin-bottom : 0.5rem;
+        border-bottom : 1px solid;
+        border-color  : #F4F4F4;
+        width         : 100%;
+        -webkit-order : unset;
+        -ms-flex-order: unset;
+        order         : unset;
+    }
+
     display                : -webkit-box;
     display                : -webkit-flex;
     display                : -ms-flexbox;
@@ -28,12 +41,22 @@
     justify-content        : center;
     position               : relative;
     padding-top            : 1rem;
-    padding-left           : 1rem;
-    padding-right          : 1rem;
     padding-bottom         : 0.5rem;
     -webkit-order          : 0;
     -ms-flex-order         : 0;
     order                  : 0;
+
+}
+
+.image {
+    height: 130px;
+    width : 130px;
+
+    @media screen and (min-width: 48rem) {
+        height: 192px;
+        width : 192px;
+    }
+
 }
 
 .details {
@@ -47,4 +70,14 @@
     padding-right         : 1rem;
     padding-top           : 1rem;
     width                 : 100%;
+
+    @media screen and (min-width: 48rem) {
+        padding-top : 0;
+        padding-left: 1rem;
+        height      : 100%;
+        width       : unset;
+    }
+
+
+
 }

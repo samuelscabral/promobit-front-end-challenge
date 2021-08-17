@@ -9,17 +9,20 @@ interface MovieCardProps {
 
 export default function MovieCardContent({ movie }: MovieCardProps) {
   return (
-    <Link href={`/movie/${movie.id}`}>
-      <a className={classes.content}>
-        <div className={classes.image}>
-          <Image
-            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-            layout="fill"
-            alt={`capa de ${movie.title}`}
-          />
-        </div>
-        <div className={classes.details}> {movie.title}</div>
-      </a>
-    </Link>
+    <div className={classes.contentContainer}>
+      <div className={classes.imageContainer}>
+        <Image
+          src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+          height={192}
+          width={192}
+          alt={`capa de ${movie.title}`}
+          className={classes.image}
+        />
+      </div>
+      <div className={classes.details}>
+        <h2>{movie.title}</h2>
+        <p>{movie.overview}</p>
+      </div>
+    </div>
   );
 }

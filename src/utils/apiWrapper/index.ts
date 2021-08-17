@@ -41,7 +41,6 @@ export async function getMovie(movieId: string) {
 
 export async function getGenres() {
   const params = fillParams({ api_key: apiKey, language });
-  console.log(`${baseUrl}/genre/movie/list?${params.toString()}`);
 
   const response = await fetch(
     `${baseUrl}/genre/movie/list?${params.toString()}`

@@ -1,9 +1,7 @@
 import { useGenres } from "hooks/useGenres";
-import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import ReactModal from "react-modal";
-import UrlParamsParse from "utils/UrlParamsParse";
+import classes from "./styles.module.scss";
 
 interface FilterModalProps {
   open: boolean;
@@ -25,6 +23,15 @@ export default function FilterModal({
     }
   }
 
+  function handleReset() {
+    setSelectedGenresId([]);
+    onRequestClose();
+  }
+
+  useEffect(() => {
+    setGenresId([...selectedGenresId]);
+  }, [selectedGenresId]);
+
   return (
     <ReactModal
       isOpen={open}
@@ -32,21 +39,44 @@ export default function FilterModal({
       onRequestClose={onRequestClose}
       shouldCloseOnOverlayClick={true}
       ariaHideApp={false}
+      className={classes.modal}
+      overlayClassName={classes.overlay}
     >
-      {genres.map((genre) => (
-        <button key={genre.id} onClick={() => handleGenreClick(genre.id)}>
-          {genresId.includes(genre.id) && "V"} {genre.name}
-        </button>
-      ))}
-
-      <button
-        onClick={() => {
-          setSelectedGenresId([...genresId]);
-          onRequestClose();
-        }}
-      >
-        Buscar
-      </button>
+      <div className={classes.container}>
+        <div className={classes.genres}>
+          {genres.map((genre) => (
+            <button
+              key={genre.id}
+              onClick={() => handleGenreClick(genre.id)}
+              className={`${classes.movieTag} ${
+                genresId.includes(genre.id) ? classes.selectedTag : ""
+              }`}
+            >
+              {genre.name}
+            </button>
+          ))}
+        </div>
+        <div className={classes.actions}>
+          <button
+            className={classes.button + " " + classes.resetButton}
+            onClick={handleReset}
+          >
+            Resetar Filtros
+          </button>
+          <button className={classes.button} onClick={onRequestClose}>
+            Cancelar
+          </button>
+          <button
+            className={classes.button}
+            onClick={() => {
+              setSelectedGenresId([...genresId]);
+              onRequestClose();
+            }}
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
     </ReactModal>
   );
 }
