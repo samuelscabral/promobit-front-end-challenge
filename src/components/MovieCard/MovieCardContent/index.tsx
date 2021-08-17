@@ -1,6 +1,5 @@
 import { MovieSummary } from "utils/apiWrapper/apiTypes";
 import classes from "./styles.module.scss";
-import Link from "next/link";
 import Image from "next/image";
 
 interface MovieCardProps {
