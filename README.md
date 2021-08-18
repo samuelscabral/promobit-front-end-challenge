@@ -1,11 +1,20 @@
 Esse é um desafio para o processo seletivo do [Promobit](https://github.com/Promobit/front-end-challenge/blob/master/README.md).
+Uma versão online do projeto pode ser acessada em https://promomovie.vercel.app
 
 ## Como rodar o projeto em seu dispositivo
 
-Basta baixar o repositório localmente 
-criar um arquivo `.env.local` com a key para a api do The Movie DB
+- Basta baixar o repositório localmente 
+- criar um arquivo `.env.local` com a key para a api do The Movie DB
 ```
 REACT_APP_TMDB_API_KEY_V3 = '<sua key>'
+```
+- Iniciar o servidor local com yarn
+```
+  yarn dev
+```
+ou npm
+```
+npm run dev
 ```
 
 ## O desafio

@@ -1,24 +1,18 @@
-.contentContainer {
-    display               : -webkit-box;
-    display               : -webkit-flex;
-    display               : -ms-flexbox;
-    display               : flex;
-    width                 : 100%;
-    height                : 100%;
-    position              : relative;
-    -webkit-flex-direction: row;
-    -ms-flex-direction    : row;
-    flex-direction        : row;
-
-
-    @media screen and (min-width: 48rem) {
-        -webkit-flex-direction: column;
-        -ms-flex-direction    : column;
-        flex-direction        : column;
-    }
-}
-
 .imageContainer {
+    display                : -webkit-box;
+    display                : -webkit-flex;
+    display                : -ms-flexbox;
+    display                : flex;
+    -webkit-box-pack       : center;
+    -webkit-justify-content: center;
+    -ms-flex-pack          : center;
+    justify-content        : center;
+    position               : relative;
+    padding                : 0.2rem;
+    -webkit-order          : 0;
+    -ms-flex-order         : 0;
+    order                  : 0;
+
     @media screen and (min-width: 48rem) {
         padding-bottom: 0;
         padding-top   : 0;
@@ -31,33 +25,38 @@
         order         : unset;
     }
 
-    display                : -webkit-box;
-    display                : -webkit-flex;
-    display                : -ms-flexbox;
-    display                : flex;
-    -webkit-box-pack       : center;
-    -webkit-justify-content: center;
-    -ms-flex-pack          : center;
-    justify-content        : center;
-    position               : relative;
-    padding-top            : 1rem;
-    padding-bottom         : 0.5rem;
-    -webkit-order          : 0;
-    -ms-flex-order         : 0;
-    order                  : 0;
+    div {
+        height       : 130px;
+        width        : 130px;
+        border-radius: 0.1rem;
 
+        @media screen and (min-width: 48rem) {
+            min-width: 192px;
+        }
+    }
 }
 
-.image {
-    height: 130px;
-    width : 130px;
+
+.contentContainer {
+    display               : -webkit-box;
+    display               : -webkit-flex;
+    display               : -ms-flexbox;
+    display               : flex;
+    width                 : 100%;
+    height                : 100%;
+    position              : relative;
+    -webkit-flex-direction: row;
+    -ms-flex-direction    : row;
+    flex-direction        : row;
 
     @media screen and (min-width: 48rem) {
-        height: 192px;
-        width : 192px;
+        -webkit-flex-direction: column;
+        -ms-flex-direction    : column;
+        flex-direction        : column;
     }
-
 }
+
+
 
 .details {
     display               : -webkit-box;
@@ -68,16 +67,54 @@
     -ms-flex-direction    : column;
     flex-direction        : column;
     padding-right         : 1rem;
-    padding-top           : 1rem;
+    padding-left          : 1rem;
     width                 : 100%;
 
+
+    overflow     : hidden;
+    text-overflow: ellipsis;
+
     @media screen and (min-width: 48rem) {
-        padding-top : 0;
-        padding-left: 1rem;
-        height      : 100%;
-        width       : unset;
+        padding-top    : 0;
+        padding-left   : 1rem;
+        height         : 100%;
+        width          : unset;
+        justify-content: space-between;
     }
+}
 
+.title {
+    color      : #323232;
+    font-weight: 400;
+    font-size  : 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    width      : size5;
+    height     : size5;
+    color      : #003B7B;
+}
 
+.overview {
+    color             : #666666;
+    font-style        : normal;
+    font-weight       : 400;
+    white-space       : pre-wrap;
+    font-size         : 0.75rem;
+    line-height       : 1rem;
+    width             : size2;
+    height            : size2;
+    color             : #666666;
+    display           : -webkit-box;
+    overflow          : hidden;
+    text-overflow     : ellipsis;
+    -webkit-box-orient: vertical;
+    width             : size2;
+    height            : size2;
+    word-break        : break-word;
+    -webkit-line-clamp: 2;
+
+    @media screen and (min-width: 48rem) {
+        -webkit-line-clamp: 3;
+    }
 
 }

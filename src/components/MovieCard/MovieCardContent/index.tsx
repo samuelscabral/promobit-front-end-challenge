@@ -19,8 +19,8 @@ export default function MovieCardContent({ movie }: MovieCardProps) {
         />
       </div>
       <div className={classes.details}>
-        <h2>{movie.title}</h2>
-        <p>{movie.overview}</p>
+        <h2 className={classes.title}>{movie.title}</h2>
+        <p className={classes.overview}>{movie.overview}</p>
       </div>
     </div>
   );

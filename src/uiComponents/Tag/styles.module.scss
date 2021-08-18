@@ -1,0 +1,22 @@
+.movieTag {
+    -webkit-box-align  : center;
+    align-items        : center;
+    border-radius      : 1rem;
+    background-color   : rgb(221, 221, 221);
+    color              : rgb(50, 50, 50);
+    font-weight        : 400;
+    white-space        : pre;
+    font-size          : 0.75rem;
+    line-height        : 1rem;
+    padding            : 2px 0.5rem;
+    margin-top         : 0.5rem;
+    margin-right       : 0.5rem;
+    border             : none;
+    cursor             : pointer;
+    -webkit-user-select: none;
+    -khtml-user-select : none;
+    -moz-user-select   : none;
+    -ms-user-select    : none;
+    -o-user-select     : none;
+    user-select        : none;
+}

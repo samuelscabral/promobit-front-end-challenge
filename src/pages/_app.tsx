@@ -1,15 +1,12 @@
-import "../styles/globals.css";
+import "styles/globals.css";
+import "styles/lightTheme.scss";
 import type { AppProps } from "next/app";
 import { GenresContextProvider } from "contexts/GenresContext";
-import React from "react";
-import { PageContextProvider } from "contexts/PageContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <GenresContextProvider>
-      <PageContextProvider>
-        <Component {...pageProps} />
-      </PageContextProvider>
+      <Component {...pageProps} />
     </GenresContextProvider>
   );
 }
