@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Esse é um desafio para o processo seletivo do [Promobit](https://github.com/Promobit/front-end-challenge/blob/master/README.md).
+Uma versão online do projeto pode ser acessada em https://promomovie.vercel.app
 
-## Getting Started
+## Como rodar o projeto em seu dispositivo
 
-First, run the development server:
-
-```bash
+- Basta baixar o repositório localmente 
+- criar um arquivo `.env.local` com a key para a api do The Movie DB
+```
+REACT_APP_TMDB_API_KEY_V3 = '<sua key>'
+```
+- Iniciar o servidor local com yarn
+```
+  yarn dev
+```
+ou npm
+```
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## O desafio
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Usando a API de filmes gratuita [themoviedb](https://developers.themoviedb.org/3/getting-started/introduction) em sua versão 3, você será responsável por criar uma listagem dos filmes mais populares do dia, consultando o endpoint  [`GET /movie/popular`](https://developers.themoviedb.org/3/movies/get-popular-movies) para realizar a listagem. Ao clicar em um item dessa listagem, outra página com os detalhes do filme escolhido deve ser exibida. Para acessar mais detalhes sobre o filme, você pode consultar o endpoint [`GET /movie/{movie_id}`](https://developers.themoviedb.org/3/movies/get-movie-details).
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Temos insights que nos levam a acreditar que os usuários dessa lista costumam ter uma experiência melhor se conseguirem criar um filtro usando seus genêros favoritos. Portanto, você também será responsável por criar filtros de filmes por gênero nessa listagem. Note que um novo endpoint deverá ser consultado para obter uma lista dos possíveis gêneros a serem filtrados, [`GET /genre/movie/list`](https://developers.themoviedb.org/3/genres/get-movie-list).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Para garantir que o usuário encontre o filme que está procurando, essa lista deverá ser paginada sempre que não existir nenhum filtro de gênero ativo.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### O que foi feito
+- [x] Adicionado Wrapper da API do TMDB de modo seguro (Onde a chave da API não é visível pelo front-end)
+- [x] Adicionado tratamento de geração de conteúdo pelo servidor de modo estático ou dinâmico (Quando necessário)
+- [X] Criação das páginas de visualização da lista de filmes e de detalhes
+- [X] Adicionado filtro de filmes e navegação entre páginas
+### Próximos passos
+- [ ] Concluir a página de visualização dos detalhes do filme
+- [ ] Melhor estilização do conteúdo
+- [ ] Refatorar algumas partes do código para deixar legível

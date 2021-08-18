@@ -1,0 +1,45 @@
+.movieCard {
+
+    background-color      : #FFFFFF;
+    border-radius         : 0.25rem;
+    display               : -webkit-box;
+    display               : -webkit-flex;
+    display               : -ms-flexbox;
+    display               : flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction    : column;
+    flex-direction        : column;
+
+    @media screen and (min-width: 48rem) {
+        -webkit-box-pack       : justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack          : justify;
+        justify-content        : space-between;
+    }
+}
+
+.content {
+    -webkit-text-decoration: none;
+    text-decoration        : none;
+    height                 : 100%;
+    display                : -webkit-box;
+    display                : -webkit-flex;
+    display                : -ms-flexbox;
+    display                : flex;
+    -webkit-flex-direction : column;
+    -ms-flex-direction     : column;
+    flex-direction         : column;
+    -webkit-box-pack       : justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack          : justify;
+    justify-content        : space-between;
+}
+
+
+.footer {
+    display : -webkit-box;
+    display : -webkit-flex;
+    display : -ms-flexbox;
+    display : flex;
+    position: relative;
+}

@@ -1,0 +1,22 @@
+.container {
+    margin          : 0 auto;
+    position        : relative;
+    background-color: var(--color-surface);
+    margin-top      : 4rem;
+    padding         : 1rem;
+    border-radius   : 0.3rem;
+    min-height      : 80vh;
+
+    @media screen and (min-width: 48rem) {
+        padding-left : 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    @media screen and (min-width: 80rem) {
+        width: 80rem;
+    }
+
+    @media screen and (min-width: 64rem) {
+        width: 64rem;
+    }
+}

@@ -1,0 +1,32 @@
+.listHeader {
+    display        : flex;
+    justify-content: space-between;
+    font-size      : 1.25rem;
+    font-weight    : 700;
+}
+
+.movieList {
+    display           : grid;
+    grid-template-rows: auto;
+    -webkit-flex      : 1;
+    -ms-flex          : 1;
+    flex              : 1;
+    width             : 100%;
+    grid-gap          : 1rem;
+    grid-column-gap   : 1rem;
+    grid-auto-flow    : row;
+    margin-top        : 1rem;
+
+
+    @media screen and (min-width: 48rem) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media screen and (min-width: 64rem) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    @media screen and (min-width: 76rem) {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}

@@ -1,0 +1,40 @@
+.header {
+    width     : 100%;
+    position  : sticky;
+    top       : 0px;
+    z-index   : 30;
+    background: white;
+}
+
+.logo {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    gap            : 1 rem;
+    font-weight    : 700;
+    font-size      : 1.75rem;
+    color          : black;
+    font-family    : 'Style Script', cursive;
+}
+
+
+.container {
+    margin         : 0 auto;
+    position       : relative;
+    display        : flex;
+    justify-content: space-between;
+    flex-direction : row;
+
+    @media screen and (min-width: 48rem) {
+        padding-left : 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    @media screen and (min-width: 80rem) {
+        width: 80rem;
+    }
+
+    @media screen and (min-width: 64rem) {
+        width: 64rem;
+    }
+}
