@@ -6,7 +6,7 @@ export default function fillParams(params: { [key: string]: Query }) {
     if (!value) continue;
     else if (typeof value === "string") parsedParams[key] = value;
     else if (typeof value === "number") parsedParams[key] = value.toString();
-    else parsedParams[key] = value.join("%2C");
+    else if (value.length > 0) parsedParams[key] = value.join(",");
   }
   return new URLSearchParams(parsedParams);
 }

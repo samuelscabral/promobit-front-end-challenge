@@ -7,14 +7,12 @@ import { MdLocalMovies } from "react-icons/md";
 export default function Header() {
   return (
     <header className={classes.header}>
-      <div className={classes.container}>
-        <Link href={"/?" + UrlParamsParse({ page: 1 }).toString()}>
-          <a className={classes.logo}>
-            <MdLocalMovies />
-            Promomovie
-          </a>
-        </Link>
-      </div>
+      <Link href={"/?" + UrlParamsParse({ page: 1 }).toString()}>
+        <a className={classes.logo}>
+          <MdLocalMovies />
+          Promomovie
+        </a>
+      </Link>
     </header>
   );
 }

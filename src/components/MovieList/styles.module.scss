@@ -5,6 +5,34 @@
     font-weight    : 700;
 }
 
+.filter {
+    font-size      : 0.9rem;
+    font-weight    : 400;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    gap            : 1rem;
+}
+
+.filterButton {
+    background-color: #fff;
+    border          : 1px solid #fff;
+    padding         : 8px 12px;
+    border-radius   : 0.3rem;
+    font-size       : 1.5rem;
+    font-weight     : 300;
+
+    :hover {
+        background-color: #000;
+    }
+}
+
+.genres {
+    margin-top   : 0.4rem;
+    margin-bottom: 1rem;
+}
+
+
 .movieList {
     display           : grid;
     grid-template-rows: auto;
@@ -29,4 +57,13 @@
     @media screen and (min-width: 76rem) {
         grid-template-columns: repeat(5, minmax(0, 1fr));
     }
+}
+
+
+
+
+.canNotFound {
+    width     : 100%;
+    margin    : 0 auto;
+    text-align: justify;
 }

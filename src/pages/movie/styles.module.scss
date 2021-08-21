@@ -1,11 +1,15 @@
+.main {
+    padding: 0.5rem;
+}
+
 .container {
-    margin          : 0 auto;
+    margin: 4rem auto;
+
     position        : relative;
     background-color: var(--color-surface);
-    margin-top      : 4rem;
     padding         : 1rem;
     border-radius   : 0.3rem;
-    min-height      : 80vh;
+    min-height      : 50vh;
 
     @media screen and (min-width: 48rem) {
         padding-left : 0.5rem;
@@ -18,5 +22,19 @@
 
     @media screen and (min-width: 64rem) {
         width: 64rem;
+    }
+}
+
+.backArrow {
+    padding         : 0.5rem;
+    border-radius   : 50%;
+    background-color: rgb(233, 233, 233);
+    color           : rgb(85, 85, 85);
+    font-size       : 1.2rem;
+    font-weight     : 300;
+    margin          : 0.1rem;
+
+    &:hover {
+        background-color: rgb(190, 190, 190);
     }
 }

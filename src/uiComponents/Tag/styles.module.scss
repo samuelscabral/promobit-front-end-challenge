@@ -1,4 +1,5 @@
 .movieTag {
+    display            : inline;
     -webkit-box-align  : center;
     align-items        : center;
     border-radius      : 1rem;
@@ -19,4 +20,13 @@
     -ms-user-select    : none;
     -o-user-select     : none;
     user-select        : none;
+
+    background-color: var(--color-surface-dark);
+    border-color    : var(--color-surface-dark);
+
+    &:hover {
+        background-color: var(--color-surface-darker);
+        border-color    : var(--color-surface-darker);
+    }
+
 }

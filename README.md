@@ -31,7 +31,3 @@ Para garantir que o usuário encontre o filme que está procurando, essa lista d
 - [x] Adicionado tratamento de geração de conteúdo pelo servidor de modo estático ou dinâmico (Quando necessário)
 - [X] Criação das páginas de visualização da lista de filmes e de detalhes
 - [X] Adicionado filtro de filmes e navegação entre páginas
-### Próximos passos
-- [ ] Concluir a página de visualização dos detalhes do filme
-- [ ] Melhor estilização do conteúdo
-- [ ] Refatorar algumas partes do código para deixar legível

@@ -29,31 +29,23 @@
 
 }
 
+.selectedTag {
+    background-color: var(--color-secondary-light);
+    border-color    : var(--color-secondary-light);
+}
+
 .resetButton {
     margin-right    : auto;
     background-color: rgb(240, 218, 22);
     border-color    : rgb(240, 218, 22);
-}
 
-.button {
-    font-size  : 1rem;
-    line-height: 1.5rem;
+    &:hover:enabled {
+        background-color: rgb(201, 183, 19);
+        border-color    : rgb(201, 183, 19);
+    }
 
-    -webkit-box-align: center;
-    align-items      : center;
-    border-width     : 0.0125rem;
-    border-radius    : 0.25rem;
-    border-style     : solid;
-    display          : inline-block;
-    font-weight      : 700;
-    -webkit-box-pack : center;
-    justify-content  : center;
-    user-select      : none;
-    text-decoration  : none;
-    transition       : all 0.15s ease-in 0s;
-    background-color : rgb(0, 138, 35);
-    border-color     : rgb(0, 138, 35);
-    font-size        : 0.875rem;
-    line-height      : 1.25rem;
-    padding          : 0.4rem 1.25rem;
+    &:active:enabled {
+        background-color: rgb(185, 169, 18);
+        border-color    : rgb(185, 169, 18);
+    }
 }

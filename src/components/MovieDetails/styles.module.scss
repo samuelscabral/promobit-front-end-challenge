@@ -1,0 +1,73 @@
+.movie {
+    display       : flex;
+    flex-direction: column;
+    gap           : 1rem;
+
+    @media screen and (min-width: 48rem) {
+        flex-direction: row;
+    }
+}
+
+
+.leftContainer {
+    width : 400px;
+    margin: 0 auto;
+
+
+
+    @media screen and (min-width: 48rem) {}
+}
+
+.imageContainer {
+
+    position     : relative;
+    border-radius: 0.5rem;
+    aspect-ratio : 3/4;
+
+    img {
+        position     : relative;
+        border-radius: 0.5rem;
+    }
+}
+
+.status {
+    font-weight: 400;
+    font-size  : 0.8rem;
+}
+
+.header {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : flex-start;
+
+    h1 {
+        font-size  : 1.5rem;
+        padding-top: 1rem;
+        margin     : 0;
+    }
+
+    h2 {
+        font-size  : 0.9rem;
+        font-weight: 400;
+        margin     : 0.1rem;
+    }
+}
+
+.details {
+    display       : flex;
+    flex-direction: column;
+    width         : 100%;
+}
+
+.tags {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+.noteCircle {
+    min-height: 4rem;
+}
+
+.overview {
+    margin-top: 2rem;
+}

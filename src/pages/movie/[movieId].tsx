@@ -12,7 +12,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { useRouter } from "next/router";
 
 import classes from "./styles.module.scss";
-import Tag from "uiComponents/Tag";
+import MovieDetails from "components/MovieDetails";
 
 export interface MovieProps {
   movie: MovieDetailed;
@@ -24,41 +24,13 @@ export default function Movies({ movie }: MovieProps) {
   return (
     <>
       <Header />
-      <main className={classes.container}>
-        <div key={movie.id}>
-          <span onClick={() => router.back()}>
-            <IoMdArrowRoundBack />
-          </span>
-          {movie.backdrop_path}
-          {movie.poster_path}
-          <div>
-            <div>
-              <span>{movie.title}</span>
-              <span> {movie.tagline}</span>
-            </div>
-            <div>
-              {movie.vote_average}
-              {movie.vote_count}
-            </div>
-          </div>
-          <div>
-            <span>{movie.budget}</span>
-            <span>{movie.revenue}</span>
-          </div>
-          {`${movie.runtime} | ${movie.release_date}  | ${movie.status} `}
-          <div>
-            {movie.genres.map((genre) => (
-              <Tag key={genre.id}>{genre.name}</Tag>
-            ))}
-          </div>
-          {
-            // movie.genres
-          }
-          {movie.overview}
-          {movie.popularity}
-          {movie.production_companies.map((companie) => (
-            <Tag key={companie.id}>{companie.name}</Tag>
-          ))}
+      <main className={classes.main}>
+        <div className={classes.container}>
+          <IoMdArrowRoundBack
+            className={classes.backArrow}
+            onClick={() => router.back()}
+          />
+          <MovieDetails movie={movie} />
         </div>
       </main>
     </>

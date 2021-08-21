@@ -60,7 +60,7 @@ export default function GenreFilterModal({ children }: GenreFilterModalProps) {
                 key={genre.id}
                 onClick={() => handleGenreClick(genre.id)}
                 className={`${
-                  genresId.includes(genre.id) ? classes.selectedTag : ""
+                  genresId.includes(genre.id) && classes.selectedTag
                 }`}
               >
                 {genre.name}
@@ -69,7 +69,8 @@ export default function GenreFilterModal({ children }: GenreFilterModalProps) {
           </div>
           <div className={classes.actions}>
             <Button
-              className={classes.button + " " + classes.resetButton}
+              className={classes.resetButton}
+              disabled={genresId.length === 0}
               onClick={handleReset}
             >
               Resetar Filtros

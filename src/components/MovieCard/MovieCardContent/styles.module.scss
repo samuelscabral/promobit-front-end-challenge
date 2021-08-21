@@ -1,43 +1,4 @@
-.imageContainer {
-    display                : -webkit-box;
-    display                : -webkit-flex;
-    display                : -ms-flexbox;
-    display                : flex;
-    -webkit-box-pack       : center;
-    -webkit-justify-content: center;
-    -ms-flex-pack          : center;
-    justify-content        : center;
-    position               : relative;
-    padding                : 0.2rem;
-    -webkit-order          : 0;
-    -ms-flex-order         : 0;
-    order                  : 0;
-
-    @media screen and (min-width: 48rem) {
-        padding-bottom: 0;
-        padding-top   : 0;
-        margin-bottom : 0.5rem;
-        border-bottom : 1px solid;
-        border-color  : #F4F4F4;
-        width         : 100%;
-        -webkit-order : unset;
-        -ms-flex-order: unset;
-        order         : unset;
-    }
-
-    div {
-        height       : 130px;
-        width        : 130px;
-        border-radius: 0.1rem;
-
-        @media screen and (min-width: 48rem) {
-            min-width: 192px;
-        }
-    }
-}
-
-
-.contentContainer {
+.container {
     display               : -webkit-box;
     display               : -webkit-flex;
     display               : -ms-flexbox;

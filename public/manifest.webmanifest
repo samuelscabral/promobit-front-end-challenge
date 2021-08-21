@@ -1,0 +1,24 @@
+{
+    "name": "Promomovie",
+    "short_name": "Promomovie",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/logo-24x24.png",
+            "type": "image/png",
+            "sizes": "24x24"
+        },
+        {
+            "src": "/logo-36x36.png",
+            "type": "image/png",
+            "sizes": "36x36"
+        },
+        {
+            "src": "/logo-48x48.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        }
+    ]
+}
