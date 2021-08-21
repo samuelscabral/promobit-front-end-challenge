@@ -6,15 +6,9 @@
     width                 : 100%;
     height                : 100%;
     position              : relative;
-    -webkit-flex-direction: row;
-    -ms-flex-direction    : row;
-    flex-direction        : row;
-
-    @media screen and (min-width: 48rem) {
-        -webkit-flex-direction: column;
-        -ms-flex-direction    : column;
-        flex-direction        : column;
-    }
+    -webkit-flex-direction: column;
+    -ms-flex-direction    : column;
+    flex-direction        : column;
 }
 
 
@@ -29,7 +23,6 @@
     flex-direction        : column;
     padding-right         : 1rem;
     padding-left          : 1rem;
-    width                 : 100%;
 
 
     overflow     : hidden;
@@ -50,8 +43,6 @@
     font-size  : 1rem;
     font-weight: 700;
     line-height: 1.5rem;
-    width      : size5;
-    height     : size5;
     color      : #003B7B;
 }
 
@@ -62,15 +53,12 @@
     white-space       : pre-wrap;
     font-size         : 0.75rem;
     line-height       : 1rem;
-    width             : size2;
-    height            : size2;
+    width             : 100%;
     color             : #666666;
     display           : -webkit-box;
     overflow          : hidden;
     text-overflow     : ellipsis;
     -webkit-box-orient: vertical;
-    width             : size2;
-    height            : size2;
     word-break        : break-word;
     -webkit-line-clamp: 2;
 

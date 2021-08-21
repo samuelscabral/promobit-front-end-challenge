@@ -13,11 +13,13 @@ export default function PageController({ totalPages }: PageControllerProps) {
   const { selectedGenresId } = useGenres();
   const router = useRouter();
   const { page } = router.query;
-  const currentPage = typeof page === "string" ? +page : undefined;
+  const currentPage = typeof page === "string" ? +page : 1;
 
   useEffect(() => {
+    const nextPage = currentPage > totalPages ? totalPages : currentPage;
     router.push(
-      "/?" + UrlParamsParse({ page, genre: selectedGenresId }).toString()
+      "/?" +
+        UrlParamsParse({ page: nextPage, genre: selectedGenresId }).toString()
     );
   }, [selectedGenresId]);
 
@@ -43,18 +45,22 @@ export default function PageController({ totalPages }: PageControllerProps) {
 
   return (
     <div className={classes.pageButtons}>
-      <Button disabled={(currentPage ?? 0) <= 1} onClick={handlePrevPage}>
-        Página Anterior
-      </Button>
-      {`${currentPage ?? 1}`}
-      <Button
-        disabled={(currentPage ?? 0) >= totalPages}
-        onClick={() => {
-          handleNextPage();
-        }}
-      >
-        Próxima Página
-      </Button>
+      {totalPages > 0 && (
+        <>
+          <Button disabled={(currentPage ?? 0) <= 1} onClick={handlePrevPage}>
+            Página Anterior
+          </Button>
+          {`${currentPage ?? 1}`}
+          <Button
+            disabled={(currentPage ?? 0) >= totalPages}
+            onClick={() => {
+              handleNextPage();
+            }}
+          >
+            Próxima Página
+          </Button>
+        </>
+      )}
     </div>
   );
 }

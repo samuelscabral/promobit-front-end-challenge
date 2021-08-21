@@ -18,9 +18,7 @@ export default function Movies({ movieResult }: MoviesProps) {
       <Header />
       <main className={classes.container}>
         <MovieList movies={movieResult.results} />
-        {movieResult.results.length > 0 && (
-          <PageController totalPages={movieResult.total_pages} />
-        )}
+        {<PageController totalPages={movieResult.total_pages} />}
       </main>
     </>
   );
