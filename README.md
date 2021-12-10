@@ -1,4 +1,3 @@
-Esse é um desafio para o processo seletivo do [Promobit](https://github.com/Promobit/front-end-challenge/blob/master/README.md).
 Uma versão online do projeto pode ser acessada em https://promomovie.vercel.app
 
 ## Como rodar o projeto em seu dispositivo
